@@ -68,13 +68,13 @@ public class HagerButton: UIButton{
             self.layer.borderWidth = 1
             self.layer.borderColor = HagerColors.mainOrange.cgColor
             self.setTitleColor(HagerColors.mainOrange, for: .normal)
-            self.setTitleColor(UIColor.white, for: .selected)
+            self.setTitleColor(UIColor.white, for: .highlighted)
             
         case .main:
             self.backgroundColor = HagerColors.mainOrange
             
             self.setTitleColor(UIColor.white, for: .normal)
-            self.setTitleColor(UIColor.white, for: .selected)
+            self.setTitleColor(UIColor.white, for: .highlighted)
         }
         
         
