@@ -30,6 +30,12 @@ public enum ButtonStyle {
 public struct HagerButtonModel{
     public let title: String
     public let style: ButtonStyle
+    
+    public init(title: String, style: ButtonStyle){
+        self.title = title
+        self.style = style
+    }
+    
 }
 
 
