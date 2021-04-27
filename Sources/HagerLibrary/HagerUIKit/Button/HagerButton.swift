@@ -25,6 +25,9 @@ struct HagerButton: View{
 public enum ButtonStyle {
     case main
     case ghost
+    case play
+    case pause
+    case add
 }
 
 public struct HagerButtonModel{
@@ -40,8 +43,6 @@ public struct HagerButtonModel{
 
 
 public class HagerButton: UIButton{
-    
-
     
     private var model: HagerButtonModel?
     
@@ -76,6 +77,19 @@ public class HagerButton: UIButton{
             self.setTitleColor(UIColor.white, for: .normal)
             self.setTitleColor(UIColor.white, for: .highlighted)
             self.setTitleColor(UIColor.white, for: .disabled)
+        case .play:
+            self.backgroundColor = HagerColors.mainOrange
+            self.layer.cornerRadius = self.frame.size.height/2
+            if #available(iOS 13.0, *) {
+                self.imageView?.image = UIImage(named: "Play.png", in: Bundle.module, with: nil)
+            } else {
+                // Fallback on earlier versions
+            }
+            
+        case .pause:
+            print("")
+        case .add:
+            print("")
         }
         
         
@@ -89,6 +103,13 @@ public class HagerButton: UIButton{
                 case .ghost:
                     backgroundColor = isHighlighted ? HagerColors.mainOrange : UIColor.white
                     self.layer.borderWidth = isHighlighted ? 0 : 1
+                case .play:
+                    print("")
+                case .pause:
+                    print("")
+                case .add:
+                    print("")
+                    
                 case .main:
                     self.backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
                 }
@@ -109,6 +130,12 @@ public class HagerButton: UIButton{
                     
                 case .main:
                     self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
+                case .play:
+                    print("")
+                case .pause:
+                    print("")
+                case .add:
+                    print("")
                 }
             }
         }
