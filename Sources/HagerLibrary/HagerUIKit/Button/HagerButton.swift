@@ -22,7 +22,7 @@ struct HagerButton: View{
     }
 }*/
 
-enum ButtonStyle {
+public enum ButtonStyle {
     case main
     case ghost
 }
