@@ -88,6 +88,8 @@ public class HagerButton: UIButton{
             }
             
         case .pause:
+            self.backgroundColor = HagerColors.mainOrange
+            self.layer.cornerRadius = self.frame.size.height/2
             if #available(iOS 13.0, *) {
                 self.setImage(UIImage(named: "Pause", in: .module, with: nil), for: .normal)
                 self.setImage(UIImage(named: "Pause", in: .module, with: nil), for: .highlighted)
@@ -95,6 +97,8 @@ public class HagerButton: UIButton{
                 // Fallback on earlier versions
             }
         case .add:
+            self.backgroundColor = HagerColors.mainOrange
+            self.layer.cornerRadius = self.frame.size.height/2
             if #available(iOS 13.0, *) {
                 self.setImage(UIImage(named: "Path", in: .module, with: nil), for: .normal)
                 self.setImage(UIImage(named: "Path", in: .module, with: nil), for: .highlighted)
