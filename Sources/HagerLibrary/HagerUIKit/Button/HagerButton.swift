@@ -61,7 +61,7 @@ public class HagerButton: UIButton{
         
         self.setTitle(model.title, for: .normal)
         self.setTitleColor(UIColor.white, for: .normal)
-        showsTouchWhenHighlighted = false
+        
         switch(model.style){
         case .ghost:
             self.backgroundColor = UIColor.white
@@ -88,8 +88,6 @@ public class HagerButton: UIButton{
                 case .ghost:
                     backgroundColor = isHighlighted ? HagerColors.mainOrange : UIColor.white
                     self.layer.borderWidth = isHighlighted ? 0 : 1
-                    
-                    isSelected = isHighlighted
                 case .main:
                     self.backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
                 }
