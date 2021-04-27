@@ -81,15 +81,26 @@ public class HagerButton: UIButton{
             self.backgroundColor = HagerColors.mainOrange
             self.layer.cornerRadius = self.frame.size.height/2
             if #available(iOS 13.0, *) {
-                self.imageView?.image = UIImage(named: "play", in: Bundle.module, with: nil)
+                self.setImage(UIImage(named: "play", in: .module, with: nil), for: .normal)
+                self.setImage(UIImage(named: "play", in: .module, with: nil), for: .highlighted)
             } else {
                 // Fallback on earlier versions
             }
             
         case .pause:
-            print("")
+            if #available(iOS 13.0, *) {
+                self.setImage(UIImage(named: "Pause", in: .module, with: nil), for: .normal)
+                self.setImage(UIImage(named: "Pause", in: .module, with: nil), for: .highlighted)
+            } else {
+                // Fallback on earlier versions
+            }
         case .add:
-            print("")
+            if #available(iOS 13.0, *) {
+                self.setImage(UIImage(named: "Path", in: .module, with: nil), for: .normal)
+                self.setImage(UIImage(named: "Path", in: .module, with: nil), for: .highlighted)
+            } else {
+                // Fallback on earlier versions
+            }
         }
         
         
@@ -104,11 +115,11 @@ public class HagerButton: UIButton{
                     backgroundColor = isHighlighted ? HagerColors.mainOrange : UIColor.white
                     self.layer.borderWidth = isHighlighted ? 0 : 1
                 case .play:
-                    print("")
+                    backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
                 case .pause:
-                    print("")
+                    backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
                 case .add:
-                    print("")
+                    backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
                     
                 case .main:
                     self.backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
@@ -124,18 +135,18 @@ public class HagerButton: UIButton{
             if let style = model?.style{
                 switch style {
                 case .ghost:
-                    backgroundColor = isEnabled ? HagerColors.mainOrange : UIColor.white
+                    backgroundColor = isEnabled ? UIColor.white : UIColor.white
                     self.layer.borderColor = isEnabled ? HagerColors.mainOrange.cgColor : HagerColors.hagerGrey.cgColor
 
                     
                 case .main:
                     self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
                 case .play:
-                    print("")
+                    backgroundColor = isEnabled ? HagerColors.hoverOrange : HagerColors.mainOrange
                 case .pause:
-                    print("")
+                    backgroundColor = isEnabled ? HagerColors.hoverOrange : HagerColors.mainOrange
                 case .add:
-                    print("")
+                    backgroundColor = isEnabled ? HagerColors.hoverOrange : HagerColors.mainOrange
                 }
             }
         }
