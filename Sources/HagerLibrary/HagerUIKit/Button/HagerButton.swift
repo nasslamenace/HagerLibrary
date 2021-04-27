@@ -67,12 +67,13 @@ public class HagerButton: UIButton{
             self.layer.borderWidth = 1
             self.layer.borderColor = HagerColors.mainOrange.cgColor
             self.setTitleColor(HagerColors.mainOrange, for: .normal)
-            self.setTitleColor(UIColor.white, for: .selected)
+            self.setTitleColor(UIColor.white, for: .highlighted)
             
         case .main:
             self.backgroundColor = HagerColors.mainOrange
             
             self.setTitleColor(UIColor.white, for: .normal)
+            self.setTitleColor(UIColor.white, for: .highlighted)
         }
         
 
@@ -90,7 +91,7 @@ public class HagerButton: UIButton{
                     backgroundColor = isHighlighted ? HagerColors.mainOrange : UIColor.white
                     self.layer.borderWidth = isHighlighted ? 0 : 1
                     
-                    isHighlighted ? self.setTitleColor(UIColor.white, for: .normal) : self.setTitleColor(HagerColors.mainOrange, for: .normal)
+                    isHighlighted ? self.setTitleColor(UIColor.white, for: .highlighted) : self.setTitleColor(HagerColors.mainOrange, for: .normal)
                     
                     
                     
@@ -110,8 +111,7 @@ public class HagerButton: UIButton{
                 case .ghost:
                     backgroundColor = isEnabled ? HagerColors.mainOrange : UIColor.white
                     self.layer.borderColor = isEnabled ? HagerColors.mainOrange.cgColor : HagerColors.hagerGrey.cgColor
-                    
-                    isEnabled ? self.setTitleColor(HagerColors.mainOrange, for: .normal) : self.setTitleColor(HagerColors.hagerGrey, for: .normal)
+
                     
                 case .main:
                     self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
