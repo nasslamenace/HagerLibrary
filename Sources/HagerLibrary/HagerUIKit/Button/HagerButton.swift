@@ -58,20 +58,20 @@ public class HagerButton: UIButton{
     
     public func configure(with model: HagerButtonModel){
         self.model = model
-        titleLabel?.text = model.title
+        self.setTitle(model.title, for: .normal)
+        self.setTitleColor(UIColor.white, for: .normal)
         
         switch(model.style){
         case .ghost:
             self.backgroundColor = UIColor.white
             self.layer.borderWidth = 1
             self.layer.borderColor = HagerColors.mainOrange.cgColor
-            
-            titleLabel?.textColor = HagerColors.mainOrange
+            self.setTitleColor(HagerColors.mainOrange, for: .normal)
             
         case .main:
             self.backgroundColor = HagerColors.mainOrange
             
-            titleLabel?.textColor = UIColor.white
+            self.setTitleColor(UIColor.white, for: .normal)
         }
         
         if #available(iOS 13.0, *) {
@@ -96,11 +96,14 @@ public class HagerButton: UIButton{
                     self.backgroundColor = HagerColors.mainOrange
                     self.layer.borderWidth = 0
                     
-                    titleLabel?.textColor = UIColor.white
+                    self.setTitleColor(UIColor.white, for: .normal)
+                    self.setTitleColor(HagerColors.mainOrange, for: .selected)
+                    self.setTitleColor(HagerColors.hagerGrey, for: .disabled)
+                    
                     
                 case .main:
                     self.backgroundColor = HagerColors.hoverOrange
-                    titleLabel?.textColor = UIColor.white
+                    self.setTitleColor(UIColor.white, for: .normal)
                 }
             }
             
@@ -114,12 +117,12 @@ public class HagerButton: UIButton{
                     self.layer.borderWidth = 1
                     self.layer.borderColor = HagerColors.mainOrange.cgColor
                     
-                    titleLabel?.textColor = HagerColors.mainOrange
+                    
                     
                 case .main:
                     self.backgroundColor = HagerColors.mainOrange
                     
-                    titleLabel?.textColor = UIColor.white
+                    self.setTitleColor(UIColor.white, for: .normal)
                 }
             }
             
