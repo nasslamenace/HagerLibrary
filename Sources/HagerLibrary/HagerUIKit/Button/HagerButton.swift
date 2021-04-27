@@ -75,60 +75,52 @@ public class HagerButton: UIButton{
             self.setTitleColor(UIColor.white, for: .normal)
         }
         
-        if #available(iOS 13.0, *) {
-            let hover = UIHoverGestureRecognizer(target: self, action: #selector(hovering(_:)))
-            self.addGestureRecognizer(hover)
-        } else {
-            // Fallback on earlier versions
-        }
+
         
         
         
     }
-    @available(iOS 13.0, *)
-    @objc
-    func hovering(_ recognizer: UIHoverGestureRecognizer) {
-        switch recognizer.state {
-        case .began, .changed:
+    
+    override open var isHighlighted: Bool {
+        didSet {
             
             if let style = model?.style{
                 switch style {
                 case .ghost:
-                    self.backgroundColor = HagerColors.mainOrange
-                    self.layer.borderWidth = 0
+                    backgroundColor = isHighlighted ? HagerColors.mainOrange : UIColor.white
+                    self.layer.borderWidth = isHighlighted ? 0 : 1
                     
-                    self.setTitleColor(UIColor.white, for: .normal)
-                    self.setTitleColor(HagerColors.mainOrange, for: .selected)
-                    self.setTitleColor(HagerColors.hagerGrey, for: .disabled)
-                    
-                    
-                case .main:
-                    self.backgroundColor = HagerColors.hoverOrange
-                    self.setTitleColor(UIColor.white, for: .normal)
-                }
-            }
-        case .ended:
-            
-            if let style = model?.style{
-                switch style {
-                case .ghost:
-                    self.backgroundColor = UIColor.white
-                    self.layer.borderWidth = 1
-                    self.layer.borderColor = HagerColors.mainOrange.cgColor
+                    isHighlighted ? self.setTitleColor(UIColor.white, for: .normal) : self.setTitleColor(HagerColors.mainOrange, for: .normal)
                     
                     
                     
                 case .main:
-                    self.backgroundColor = HagerColors.mainOrange
-                    
-                    self.setTitleColor(UIColor.white, for: .normal)
+                    self.backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
                 }
             }
             
-        default:
-            break
+            
         }
     }
+    
+    override open var isEnabled: Bool{
+        didSet{
+            if let style = model?.style{
+                switch style {
+                case .ghost:
+                    backgroundColor = isEnabled ? HagerColors.mainOrange : UIColor.white
+                    self.layer.borderColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
+                    
+                    isEnabled ? self.setTitleColor(HagerColors.mainOrange, for: .normal) : self.setTitleColor(HagerColors.hagerGrey, for: .normal)
+                    
+                case .main:
+                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
+                }
+            }
+        }
+    }
+    
+    
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
