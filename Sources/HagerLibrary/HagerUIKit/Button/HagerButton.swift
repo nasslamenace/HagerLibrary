@@ -109,7 +109,7 @@ public class HagerButton: UIButton{
                 switch style {
                 case .ghost:
                     backgroundColor = isEnabled ? HagerColors.mainOrange : UIColor.white
-                    self.layer.borderColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
+                    self.layer.borderColor = isEnabled ? HagerColors.mainOrange.cgColor : HagerColors.hagerGrey.cgColor
                     
                     isEnabled ? self.setTitleColor(HagerColors.mainOrange, for: .normal) : self.setTitleColor(HagerColors.hagerGrey, for: .normal)
                     
