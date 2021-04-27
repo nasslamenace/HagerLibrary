@@ -81,7 +81,7 @@ public class HagerButton: UIButton{
             self.backgroundColor = HagerColors.mainOrange
             self.layer.cornerRadius = self.frame.size.height/2
             if #available(iOS 13.0, *) {
-                self.imageView?.image = UIImage(named: "play.png", in: Bundle.module, with: nil)
+                self.imageView?.image = UIImage(named: "play", in: Bundle.module, with: nil)
             } else {
                 // Fallback on earlier versions
             }
