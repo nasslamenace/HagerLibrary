@@ -67,6 +67,7 @@ public class HagerButton: UIButton{
             self.layer.borderWidth = 1
             self.layer.borderColor = HagerColors.mainOrange.cgColor
             self.setTitleColor(HagerColors.mainOrange, for: .normal)
+            self.setTitleColor(UIColor.white, for: .selected)
             
         case .main:
             self.backgroundColor = HagerColors.mainOrange
@@ -106,8 +107,6 @@ public class HagerButton: UIButton{
                     self.setTitleColor(UIColor.white, for: .normal)
                 }
             }
-            
-            self.titleLabel?.textColor = UIColor.link
         case .ended:
             
             if let style = model?.style{
