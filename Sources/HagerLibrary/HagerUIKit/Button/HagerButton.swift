@@ -28,8 +28,8 @@ public enum ButtonStyle {
 }
 
 public struct HagerButtonModel{
-    let title: String
-    let style: ButtonStyle
+    public let title: String
+    public let style: ButtonStyle
 }
 
 
