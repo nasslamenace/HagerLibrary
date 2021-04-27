@@ -77,9 +77,6 @@ public class HagerButton: UIButton{
             self.setTitleColor(UIColor.white, for: .selected)
         }
         
-
-        
-        
         
     }
     
