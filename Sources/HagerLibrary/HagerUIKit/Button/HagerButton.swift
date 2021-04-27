@@ -58,7 +58,7 @@ public class HagerButton: UIButton{
     
     public func configure(with model: HagerButtonModel){
         self.model = model
-        self.buttonType = UIButton.ButtonType.custom
+        
         self.setTitle(model.title, for: .normal)
         self.setTitleColor(UIColor.white, for: .normal)
         
@@ -68,13 +68,13 @@ public class HagerButton: UIButton{
             self.layer.borderWidth = 1
             self.layer.borderColor = HagerColors.mainOrange.cgColor
             self.setTitleColor(HagerColors.mainOrange, for: .normal)
-            self.setTitleColor(UIColor.white, for: .highlighted)
+            self.setTitleColor(UIColor.white, for: .selected)
             
         case .main:
             self.backgroundColor = HagerColors.mainOrange
             
             self.setTitleColor(UIColor.white, for: .normal)
-            self.setTitleColor(UIColor.white, for: .highlighted)
+            self.setTitleColor(UIColor.white, for: .selected)
         }
         
 
@@ -91,6 +91,8 @@ public class HagerButton: UIButton{
                 case .ghost:
                     backgroundColor = isHighlighted ? HagerColors.mainOrange : UIColor.white
                     self.layer.borderWidth = isHighlighted ? 0 : 1
+                    
+                    isSelected = isHighlighted
                 case .main:
                     self.backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
                 }
