@@ -38,9 +38,7 @@ public struct HagerButtonModel{
         self.title = title
         self.style = style
     }
-    
 }
-
 
 public class HagerButton: UIButton{
     
@@ -129,8 +127,6 @@ public class HagerButton: UIButton{
                     self.backgroundColor = isHighlighted ? HagerColors.hoverOrange : HagerColors.mainOrange
                 }
             }
-            
-            
         }
     }
     
@@ -146,11 +142,11 @@ public class HagerButton: UIButton{
                 case .main:
                     self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
                 case .play:
-                    backgroundColor = isEnabled ? HagerColors.hoverOrange : HagerColors.mainOrange
+                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
                 case .pause:
-                    backgroundColor = isEnabled ? HagerColors.hoverOrange : HagerColors.mainOrange
+                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
                 case .add:
-                    backgroundColor = isEnabled ? HagerColors.hoverOrange : HagerColors.mainOrange
+                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
                 }
             }
         }
