@@ -10,7 +10,7 @@ import UIKit
 
 
 
-@available(iOS 13.0, *)
+
 class HagerTextFieldView: UIView{
     
     private var model : HagerTextFieldModel?
@@ -32,6 +32,7 @@ class HagerTextFieldView: UIView{
     private var textField: UITextField
     
     
+    @available(iOS 13.0, *)
     func configure(with model: HagerTextFieldModel){
         titleLabel.text = model.title
         optionalMsgLabel.text = model.optionalMessage
@@ -63,15 +64,16 @@ class HagerTextFieldView: UIView{
         
     }
     
-    
+
     override init(frame: CGRect) {
         model = nil
-        textField = HagerTextFieldDefault()
+        textField = UITextField()
         super.init(frame: frame)
+        
     }
     
     required init?(coder: NSCoder) {
-        textField = HagerTextFieldDefault()
+        textField = UITextField()
         model = nil
         super.init(coder: coder)
     }

@@ -10,9 +10,13 @@ import UIKit
 
 
 
+
+
+
 @available(iOS 13.0, *)
 class HagerTextFieldDefault: UITextField{
     
+ 
     private let errorIcon = UIImageView(image: UIImage(named: "error", in: .module, with: nil))
     private let border = CALayer()
     
