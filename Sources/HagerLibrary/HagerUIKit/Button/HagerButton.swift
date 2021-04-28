@@ -22,23 +22,9 @@ struct HagerButton: View{
     }
 }*/
 
-public enum ButtonStyle {
-    case main
-    case ghost
-    case play
-    case pause
-    case add
-}
 
-public struct HagerButtonModel{
-    public let title: String
-    public let style: ButtonStyle
-    
-    public init(title: String, style: ButtonStyle){
-        self.title = title
-        self.style = style
-    }
-}
+
+
 
 public class HagerButton: UIButton{
     
@@ -68,7 +54,7 @@ public class HagerButton: UIButton{
             self.layer.borderColor = HagerColors.mainOrange.cgColor
             self.setTitleColor(HagerColors.mainOrange, for: .normal)
             self.setTitleColor(UIColor.white, for: .highlighted)
-            self.setTitleColor(HagerColors.hagerGrey, for: .disabled)
+            self.setTitleColor(HagerColors.hagerGreyE6, for: .disabled)
         case .main:
             self.backgroundColor = HagerColors.mainOrange
             
@@ -136,17 +122,17 @@ public class HagerButton: UIButton{
                 switch style {
                 case .ghost:
                     backgroundColor = isEnabled ? UIColor.white : UIColor.white
-                    self.layer.borderColor = isEnabled ? HagerColors.mainOrange.cgColor : HagerColors.hagerGrey.cgColor
+                    self.layer.borderColor = isEnabled ? HagerColors.mainOrange.cgColor : HagerColors.hagerGreyE6.cgColor
 
                     
                 case .main:
-                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
+                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGreyE6
                 case .play:
-                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
+                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGreyE6
                 case .pause:
-                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
+                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGreyE6
                 case .add:
-                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGrey
+                    self.backgroundColor = isEnabled ? HagerColors.mainOrange : HagerColors.hagerGreyE6
                 }
             }
         }
