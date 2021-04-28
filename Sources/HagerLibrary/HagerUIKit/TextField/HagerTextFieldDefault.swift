@@ -19,7 +19,7 @@ class HagerTextFieldDefault: UITextField{
     func configure(with frame: CGRect, from model: HagerTextFieldModel){
         
         self.frame = frame
-        self.placeholder = model.placeHolder                                                                                    
+        self.placeholder = model.placeHolder
         self.addSubview(errorIcon)
         clipsToBounds  = true
         
