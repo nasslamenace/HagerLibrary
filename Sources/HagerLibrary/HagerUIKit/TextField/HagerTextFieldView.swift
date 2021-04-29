@@ -65,6 +65,7 @@ public class HagerTextFieldView: UIView{
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        textField.resignFirstResponder()
         optionalMsgLabel.text = ""
         optionalMsgLabel.textColor = HagerColors.hagerGreyAF
         titleLabel.textColor = HagerColors.hagerGrey4A
