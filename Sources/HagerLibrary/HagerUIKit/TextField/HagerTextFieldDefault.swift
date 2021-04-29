@@ -13,7 +13,7 @@ import UIKit
 
 
 
-class HagerTextFieldDefault: UITextField{
+public class HagerTextFieldDefault: UITextField{
     
  
     private var errorIcon = UIImageView()

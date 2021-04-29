@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class HagerTextFieldView: UIView{
+public class HagerTextFieldView: UIView{
     
     private var model : HagerTextFieldModel?
     
