@@ -65,6 +65,9 @@ public class HagerTextFieldView: UIView{
         
         (textField as! HagerTextFieldDefault).displayError()
         optionalMsgLabel.text = message
+        optionalMsgLabel.textColor = HagerColors.errorRed
+        titleLabel.textColor = HagerColors.errorRed
+        
         
     }
     
