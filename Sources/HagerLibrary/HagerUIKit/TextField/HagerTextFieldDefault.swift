@@ -29,7 +29,7 @@ public class HagerTextFieldDefault: UITextField{
         errorIcon.isHidden = true
         
         border.frame = CGRect(x: frame.minX, y: frame.maxY, width: frame.width, height: 1);
-        border.backgroundColor = HagerColors.hagerGreyE6.cgColor
+        border.backgroundColor = HagerColors.errorRed.cgColor
         layer.addSublayer(border)
         self.layer.borderColor = HagerColors.hagerGreyE6.cgColor
         self.layer.borderWidth = 1
@@ -52,6 +52,7 @@ public class HagerTextFieldDefault: UITextField{
         errorIcon.isHidden = false
         border.backgroundColor = HagerColors.errorRed.cgColor
         //layer.borderColor = HagerColors.errorRed.cgColor
+        self.layoutSubviews()
     }
     
     
