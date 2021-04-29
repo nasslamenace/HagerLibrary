@@ -13,6 +13,18 @@ public class HagerTextFieldDefault: UITextField{
  
     private var errorIcon = UIImageView()
     private let border = CALayer()
+    private var isError = false {
+        didSet{
+            if(isError){
+                errorIcon.isHidden = false
+                border.backgroundColor = HagerColors.errorRed.cgColor
+            }
+            else{
+                errorIcon.isHidden = true
+                border.backgroundColor = HagerColors.errorRed.cgColor
+            }
+        }
+    }
     
     @available(iOS 13.0, *)
     func configure(with frame: CGRect, from model: HagerTextFieldModel){
@@ -21,10 +33,9 @@ public class HagerTextFieldDefault: UITextField{
         self.placeholder = model.placeHolder
         
         errorIcon.image = UIImage(named: "error", in: .module, with: nil)
-        errorIcon.backgroundColor = UIColor.blue
         self.addSubview(errorIcon)
         
-        errorIcon.frame = CGRect(x: frame.width - 35, y: frame.width/2 - 8, width: 16, height: 19)
+        errorIcon.frame = CGRect(x: frame.width - 35, y: frame.height/2 - 8, width: 16, height: 19)
         errorIcon.isHidden = true
         
 
@@ -43,20 +54,22 @@ public class HagerTextFieldDefault: UITextField{
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if #available(iOS 10.0, *) {
+            isError = false
             self.border.backgroundColor = HagerColors.hoverOrange.cgColor
-            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { (timer) in
+            Timer.scheduledTimer(withTimeInterval: 1.4, repeats: false) { (timer) in
                 self.border.backgroundColor = HagerColors.hagerGreyE6.cgColor
             }
+            
+            
+            
+            
         } else {
             // Fallback on earlier versions
         }
     }
     
     public func displayError(){
-        errorIcon.isHidden = false
-        border.backgroundColor = HagerColors.errorRed.cgColor
-        //layer.borderColor = HagerColors.errorRed.cgColor
-        self.layoutSubviews()
+        isError = true
     }
     
     
