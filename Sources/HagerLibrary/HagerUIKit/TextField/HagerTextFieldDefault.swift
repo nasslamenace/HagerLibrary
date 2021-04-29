@@ -21,7 +21,7 @@ public class HagerTextFieldDefault: UITextField{
         self.placeholder = model.placeHolder
         
         errorIcon.image = UIImage(named: "error", in: .module, with: nil)
-        
+        errorIcon.backgroundColor = UIColor.blue
         self.addSubview(errorIcon)
         clipsToBounds  = true
         
