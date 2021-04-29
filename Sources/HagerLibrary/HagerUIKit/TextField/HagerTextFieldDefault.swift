@@ -23,7 +23,6 @@ public class HagerTextFieldDefault: UITextField{
         errorIcon.image = UIImage(named: "error", in: .module, with: nil)
         errorIcon.backgroundColor = UIColor.blue
         self.addSubview(errorIcon)
-        clipsToBounds  = true
         
         errorIcon.frame = CGRect(x: frame.width - 35, y: frame.width/2 - 8, width: 16, height: 19)
         errorIcon.isHidden = true
