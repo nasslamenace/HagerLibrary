@@ -34,7 +34,7 @@ public class HagerTextFieldView: UIView{
         titleLabel.text = model.title
         optionalMsgLabel.text = model.optionalMessage
         
-        textField.delegate = self
+        textField.delegate = self as UITextFieldDelegate
 
         
         switch model.style {
@@ -79,7 +79,7 @@ public class HagerTextFieldView: UIView{
         
         
     }
-
+    
     override init(frame: CGRect) {
         model = nil
         textField = UITextField()
