@@ -28,7 +28,7 @@ public class HagerTextFieldDefault: UITextField{
         errorIcon.frame = CGRect(x: frame.width - 35, y: frame.width/2 - 8, width: 16, height: 19)
         errorIcon.isHidden = true
         
-        border.frame = CGRect(x: frame.minX, y: frame.maxY, width: frame.width, height: 1);
+        border.frame = CGRect(x: frame.minX, y: frame.maxY, width: frame.width, height: 3);
         border.backgroundColor = HagerColors.errorRed.cgColor
         layer.addSublayer(border)
         self.layer.borderColor = HagerColors.hagerGreyE6.cgColor
