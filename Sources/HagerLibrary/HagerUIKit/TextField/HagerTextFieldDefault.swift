@@ -43,8 +43,9 @@ public class HagerTextFieldDefault: UITextField{
     
     @objc func textFieldDidChange(_ textField: UITextField) {
         if #available(iOS 10.0, *) {
+            self.border.backgroundColor = HagerColors.hoverOrange.cgColor
             Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { (timer) in
-                self.border.backgroundColor = HagerColors.hoverOrange.cgColor
+                self.border.backgroundColor = HagerColors.hagerGreyE6.cgColor
             }
         } else {
             // Fallback on earlier versions
