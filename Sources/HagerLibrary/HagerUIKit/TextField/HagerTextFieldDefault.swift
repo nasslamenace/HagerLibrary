@@ -36,7 +36,7 @@ public class HagerTextFieldDefault: UITextField{
         
         self.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
-        border.frame = CGRect(x: 0, y: frame.height - 1, width: frame.width, height: 1);
+        border.frame = CGRect(x: 0, y: frame.height - 1, width: frame.width, height: 2);
         border.backgroundColor = HagerColors.errorRed.cgColor
         layer.addSublayer(border)
         
