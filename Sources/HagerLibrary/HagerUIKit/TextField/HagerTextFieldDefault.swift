@@ -8,11 +8,6 @@
 import Foundation
 import UIKit
 
-
-
-
-
-
 public class HagerTextFieldDefault: UITextField{
     
  
@@ -56,6 +51,7 @@ public class HagerTextFieldDefault: UITextField{
     public func displayError(){
         errorIcon.isHidden = false
         border.backgroundColor = HagerColors.errorRed.cgColor
+        layer.borderColor = HagerColors.errorRed
     }
     
     
