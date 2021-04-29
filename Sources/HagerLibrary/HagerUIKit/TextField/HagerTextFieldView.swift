@@ -59,7 +59,7 @@ public class HagerTextFieldView: UIView{
         (textField as! HagerTextFieldDefault).configure(with: CGRect(x: 5, y: self.frame.height * 0.3 + 5, width: self.frame.width, height: self.frame.height * 0.5 ), from: model)
         optionalMsgLabel.frame = CGRect(x: 5, y: self.frame.height * 0.8 + 5, width: self.frame.width, height: self.frame.height * 0.20)
         
-        textField.addTarget(textField, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        textField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
     }
     
