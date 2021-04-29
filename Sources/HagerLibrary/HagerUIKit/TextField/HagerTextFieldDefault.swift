@@ -16,7 +16,6 @@ public class HagerTextFieldDefault: UITextField{
     
     @available(iOS 13.0, *)
     func configure(with frame: CGRect, from model: HagerTextFieldModel){
-        print("is called")
         self.frame = frame
         self.placeholder = model.placeHolder
         
@@ -33,7 +32,7 @@ public class HagerTextFieldDefault: UITextField{
         layer.addSublayer(border)
         layer.borderColor = HagerColors.errorRed.cgColor
         self.layer.borderColor = HagerColors.hagerGreyE6.cgColor
-        self.layer.borderWidth = 1
+        self.layer.borderWidth = 0
         
         self.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         
