@@ -79,7 +79,6 @@ public class HagerTextFieldView: UIView{
         
         
     }
-    
 
     override init(frame: CGRect) {
         model = nil
@@ -93,9 +92,13 @@ public class HagerTextFieldView: UIView{
         model = nil
         super.init(coder: coder)
     }
-    
-    
-    
+}
 
+extension HagerTextFieldView: UITextFieldDelegate{
+    
+    public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
     
 }
