@@ -64,7 +64,7 @@ public class HagerTextFieldView: UIView{
     public func displayError(message: String){
         
         (textField as! HagerTextFieldDefault).displayError()
-        optionalMessage = message
+        optionalMsgLabel.text = message
         
     }
     
