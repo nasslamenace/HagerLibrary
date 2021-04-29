@@ -34,6 +34,7 @@ public class HagerTextFieldView: UIView{
         titleLabel.text = model.title
         optionalMsgLabel.text = model.optionalMessage
         
+        textField.delegate = self
 
         
         switch model.style {
@@ -64,7 +65,6 @@ public class HagerTextFieldView: UIView{
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        print("is called ")
         optionalMsgLabel.text = ""
         optionalMsgLabel.textColor = HagerColors.hagerGreyAF
         titleLabel.textColor = HagerColors.hagerGrey4A
