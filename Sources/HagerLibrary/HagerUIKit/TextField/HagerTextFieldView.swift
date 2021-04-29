@@ -1,15 +1,12 @@
 //
 //  File.swift
-//  
+//
 //
 //  Created by Nassim Guettat on 28/04/2021.
 //
 
 import Foundation
 import UIKit
-
-
-
 
 class HagerTextFieldView: UIView{
     
