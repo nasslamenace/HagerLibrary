@@ -61,6 +61,13 @@ public class HagerTextFieldView: UIView{
         
     }
     
+    public func displayError(message: String){
+        
+        (textField as! HagerTextFieldDefault).displayError()
+        optionalMessage = message
+        
+    }
+    
 
     override init(frame: CGRect) {
         model = nil
