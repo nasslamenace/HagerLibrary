@@ -68,6 +68,9 @@ public class HagerTextFieldView: UIView{
         optionalMsgLabel.text = ""
         optionalMsgLabel.textColor = HagerColors.hagerGreyAF
         titleLabel.textColor = HagerColors.hagerGrey4A
+        
+        
+        
     }
     
     public func displayError(message: String){
@@ -98,6 +101,7 @@ extension HagerTextFieldView: UITextFieldDelegate{
     
     public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
+        print("is called")
         return true
     }
     
