@@ -53,6 +53,9 @@ public class HagerTextFieldDefault: UITextField{
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
+        
+        print("is called ")
+        
         if #available(iOS 10.0, *) {
             isError = false
             self.border.backgroundColor = HagerColors.hoverOrange.cgColor
