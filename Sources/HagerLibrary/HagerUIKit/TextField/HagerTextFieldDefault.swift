@@ -13,17 +13,20 @@ import UIKit
 
 
 
-@available(iOS 13.0, *)
 class HagerTextFieldDefault: UITextField{
     
  
-    private let errorIcon = UIImageView(image: UIImage(named: "error", in: .module, with: nil))
+    private var errorIcon = UIImageView()
     private let border = CALayer()
     
+    @available(iOS 13.0, *)
     func configure(with frame: CGRect, from model: HagerTextFieldModel){
         
         self.frame = frame
         self.placeholder = model.placeHolder
+        
+        errorIcon.image = UIImage(named: "error", in: .module, with: nil)
+        
         self.addSubview(errorIcon)
         clipsToBounds  = true
         
@@ -41,8 +44,12 @@ class HagerTextFieldDefault: UITextField{
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { (timer) in
-            self.border.backgroundColor = HagerColors.hoverOrange.cgColor
+        if #available(iOS 10.0, *) {
+            Timer.scheduledTimer(withTimeInterval: 0.8, repeats: false) { (timer) in
+                self.border.backgroundColor = HagerColors.hoverOrange.cgColor
+            }
+        } else {
+            // Fallback on earlier versions
         }
     }
     
