@@ -30,7 +30,7 @@ public class HagerTextFieldView: UIView{
     
     
     @available(iOS 13.0, *)
-    func configure(with model: HagerTextFieldModel){
+    public func configure(with model: HagerTextFieldModel){
         titleLabel.text = model.title
         optionalMsgLabel.text = model.optionalMessage
         
