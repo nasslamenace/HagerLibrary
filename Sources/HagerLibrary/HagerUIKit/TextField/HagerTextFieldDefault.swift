@@ -16,7 +16,7 @@ public class HagerTextFieldDefault: UITextField{
     
     @available(iOS 13.0, *)
     func configure(with frame: CGRect, from model: HagerTextFieldModel){
-        
+        print("is called")
         self.frame = frame
         self.placeholder = model.placeHolder
         
